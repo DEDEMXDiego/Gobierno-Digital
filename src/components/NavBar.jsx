@@ -1,17 +1,19 @@
-import React from 'react';
-import { Logo } from './Icons';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Logo } from "./Icons";
+import { Link } from "react-router-dom";
 
 export const NavBar = () => {
   return (
-    <nav className="bg-blue-600 p-4 shadow-lg">
+    <nav className="bg-gradient-to-r from-yellow-400 via-red-500 to-blue-600 p-4 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <Logo/>
+          <Logo />
         </div>
         <div>
-          <Link to="/" className="bg-white text-blue-600 font-bold py-2 px-4 rounded hover:bg-gray-200">
-            Inició
+          <Link
+            to="/"
+            className="text-white font-bold py-2 px-4 rounded transition-transform duration-300 hover:text-yellow-500 hover:scale-105">
+            Inicio
           </Link>
         </div>
       </div>
