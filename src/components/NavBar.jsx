@@ -12,7 +12,7 @@ export const NavBar = () => {
         <div>
           <Link
             to="/"
-            className="text-white font-bold py-2 px-4 rounded transition-transform duration-300 hover:text-yellow-500 hover:scale-105">
+            className="text-white text-5xl font-bold py-2 px-4 rounded transition-transform duration-300 hover:text-yellow-500 hover:scale-105">
             Inicio
           </Link>
         </div>

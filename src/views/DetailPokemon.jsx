@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { usePokemon } from "../hooks/usePokemon";
 import { CardPokemon } from "../components/CardPokemon";
 
@@ -15,7 +15,7 @@ export const DetailPokemon = () => {
       setPokemon(data);
     };
     fetchPokemon();
-  }, []);
+  }, [nombre]);
 
   useEffect(() => {
     if (!pokemon?.data?.id) return;
@@ -56,46 +56,8 @@ export const DetailPokemon = () => {
     fetchEvoluciones();
   }, [pokemon]);
 
-  // useEffect(() => {
-  //   if (!pokemon?.data?.id) return;
-
-  //   const obtenerEvoluciones = async (evolutionChain) => {
-  //     const promises = [];
-
-  //     const extraerEvoluciones = (chain) => {
-  //       if (chain?.species?.name) {
-  //         const fetchImagen = async () => {
-  //           const img = await pokemonImagen(chain.species.name);
-  //           return { name: chain.species.name, img: img };
-  //         };
-  //         promises.push(fetchImagen());
-  //       }
-  //       if (chain?.evolves_to?.length > 0) {
-  //         chain.evolves_to.forEach((nextEvolution) => {
-  //           extraerEvoluciones(nextEvolution);
-  //         });
-  //       }
-  //     };
-
-  //     extraerEvoluciones(evolutionChain.chain);
-
-  //     const evolucionesConImagen = await Promise.all(promises);
-  //     return evolucionesConImagen;
-  //   };
-
-  //   const fetchEvoluciones = async () => {
-  //     const data = await pokemonEvolucion(pokemon?.data?.id);
-  //     const evolucionesArray = await obtenerEvoluciones(data.data);
-  //     setEvoluciones(evolucionesArray);
-  //   };
-
-  //   fetchEvoluciones();
-  // }, [pokemon]);
-
-  console.log(pokemon);
-
   return (
-    <div className="p-4 max-w-md mx-auto">
+    <div className="p-4 max-w-2xl mx-auto">
       <h1 className="text-2xl font-bold text-center mb-4 uppercase">
         {nombre || (
           <div className="w-32 h-6 bg-gray-300 rounded animate-pulse mx-auto"></div>
@@ -131,7 +93,7 @@ export const DetailPokemon = () => {
           pokemon?.data?.types?.map((tipo, i) => (
             <div
               key={i}
-              className="bg-blue-500 text-white px-3 py-1 rounded-full">
+              className="px-3 py-1 rounded-full border border-black">
               {tipo?.type?.name}
             </div>
           ))
@@ -172,18 +134,11 @@ export const DetailPokemon = () => {
       <ul className="flex overflow-x-auto space-x-4">
         {evoluciones.length
           ? evoluciones.map((evolucion, i) => (
-              <li
+            <CardPokemon
                 key={i}
-                className="flex-shrink-0 w-32 bg-white border rounded-lg shadow-md p-2">
-                <h2 className="text-lg font-semibold text-center">
-                  {evolucion.name}
-                </h2>
-                <img
-                  className="w-full h-auto mx-auto"
-                  src={evolucion.img}
-                  alt={evolucion.name}
-                />
-              </li>
+                nombre={evolucion.name}
+                url={evolucion.img}
+              />
             ))
           : Array(3)
               .fill("")

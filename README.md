@@ -1,73 +1,49 @@
 Nombre: Diego Beltran Torres
 
+# Introducción a Create React App
+Este proyecto fue inicializado con Create React App.
 
-# Getting Started with Create React App
+## Scripts Disponibles
+En el directorio del proyecto, puedes ejecutar:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## npm i
+## npm start
 
-## Available Scripts
+Ejecuta la aplicación en modo desarrollo.
+Abre http://localhost:3000 para verla en tu navegador.
 
-In the project directory, you can run:
+La página se recargará cuando realices cambios.
+También podrás ver cualquier error de lint en la consola.
 
-### `npm start`
+## npm test
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Lanza el ejecutor de pruebas en modo de vigilancia interactiva.
+Consulta la sección sobre ejecutar pruebas para más información.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## npm run build
 
-### `npm test`
+Construye la aplicación para producción en la carpeta build.
+Agrupa correctamente React en modo de producción y optimiza la construcción para el mejor rendimiento.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+La construcción está minificada y los nombres de archivo incluyen los hashes.
+¡Tu aplicación está lista para ser desplegada!
 
-### `npm run build`
+## Opiniones
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Tailwind CSS hace que el desarrollo de interfaces sea muy eficiente, y su integración con React permite la personalización rápida del diseño.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+La flexibilidad de Tailwind CSS permite una personalización profunda de los estilos sin necesidad de escribir mucho CSS personalizado, lo que acelera el desarrollo y reduce el tiempo de implementación.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+La combinación de React Router DOM para manejar la navegación entre las diferentes vistas de los Pokémon y Axios para consumir la API ha funcionado de manera eficiente.
 
-### `npm run eject`
+La integración de Axios para manejar las solicitudes HTTP ha simplificado el proceso de obtención de datos de la API, haciendo que el flujo de datos sea más fluido y manejable.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Mejoras
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Se podría implementar una sección de favoritos para que el usuario pueda marcar ciertos Pokémon y acceder a ellos más fácilmente.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Se podría implementar un Framework para manejar de una mejor manera el ruteo de la app por ejmplo Next.js  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Autocritica
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Asegurarse de que la aplicación sea completamente responsiva en todos los dispositivos. Realizar pruebas en diferentes tamaños de pantalla y ajustar los estilos de Tailwind según sea necesario puede mejorar la experiencia del usuario en dispositivos móviles y tabletas.
