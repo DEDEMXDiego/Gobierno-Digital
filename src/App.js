@@ -1,12 +1,16 @@
-import './estilos/App.css';
-import { Home } from './views/Home';
-
+import { BrowserRouter } from "react-router-dom";
+import { Footer } from "./components/Footer";
+import { NavBar } from "./components/NavBar";
+import "./estilos/App.css";
+import { AppRouter } from "./routes/AppRouter";
 
 function App() {
   return (
-    <div className="App">
-      <Home/>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <AppRouter />
+      <Footer />
+    </BrowserRouter>
   );
 }
 
