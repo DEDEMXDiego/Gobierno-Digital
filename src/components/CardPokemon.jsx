@@ -1,13 +1,14 @@
 import {React, useState, useEffect} from "react";
 import { usePokemon } from "../hooks/usePokemon";
+import { Link } from "react-router-dom";
 
-export const CardPokemon = ({ nombre, url }) => {
+export const CardPokemon = ({ nombre }) => {
   const [pokemon, setPokemon] = useState(null);
   const { detallePokemon } = usePokemon();
 
   useEffect(() => {
     const fetchPokemon = async () => {
-      const data = await detallePokemon(url);
+      const data = await detallePokemon(nombre);
       setPokemon(data);
     };
     fetchPokemon();
@@ -27,9 +28,9 @@ export const CardPokemon = ({ nombre, url }) => {
         <p className="text-gray-700 text-base truncate">{pokemon?.name}</p>
       </div>
       <div className="px-6 pt-4 pb-2 text-center">
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        <Link to={`/detalles/${nombre}`} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
           Ver más
-        </button>
+        </Link>
       </div>
     </div>
   );

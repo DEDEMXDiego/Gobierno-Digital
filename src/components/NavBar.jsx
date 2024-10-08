@@ -1,5 +1,6 @@
 import React from 'react';
 import { Logo } from './Icons';
+import { Link } from 'react-router-dom';
 
 export const NavBar = () => {
   return (
@@ -9,9 +10,9 @@ export const NavBar = () => {
           <Logo/>
         </div>
         <div>
-          <button className="bg-white text-blue-600 font-bold py-2 px-4 rounded hover:bg-gray-200">
+          <Link to="/" className="bg-white text-blue-600 font-bold py-2 px-4 rounded hover:bg-gray-200">
             Inició
-          </button>
+          </Link>
         </div>
       </div>
     </nav>

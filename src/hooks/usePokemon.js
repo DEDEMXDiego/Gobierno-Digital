@@ -10,16 +10,30 @@ export const usePokemon = () => {
     return res.data    
   };
 
-  const detallePokemon = async (url) => {
-    let pokemon = await apiDex("GET", url, null);
-    console.log(pokemon);
+  const detallePokemon = async (id) => {
+    let pokemon = await apiDex("GET", `https://pokeapi.co/api/v2/pokemon/${id}`, null);
+    console.log(id);
     return pokemon
   };
+
+  const pokemonEvolucion = async (id) => {
+    let pokemon = await apiDex("GET", `https://pokeapi.co/api/v2/evolution-chain/${id}`, null);
+    console.log(id);
+    return pokemon
+  };
+
+  const pokemonImagen = async (id) => {
+    let pokemon = await apiDex("GET", `https://pokeapi.co/api/v2/pokemon/${id}`, null);
+    console.log(pokemon?.data?.sprites?.front_default);
+    return pokemon?.data?.sprites?.front_default
+  };
+
+
 
   return {
     detallePokemon,
     consultar,
-
-    
+    pokemonEvolucion,
+    pokemonImagen,    
   };
 };
